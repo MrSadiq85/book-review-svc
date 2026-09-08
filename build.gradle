@@ -1,0 +1,42 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '4.1.1'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.epam'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(25)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// 1. Spring Boot Web starter for building REST APIs
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// 2. Jackson (Included transitively via web, but good to know)
+	// Used to read/write JSON database replica files from src/main/resources
+	implementation 'com.fasterxml.jackson.core:jackson-databind'
+
+	// 3. SpringDoc OpenAPI UI for Swagger documentation (No authentication required)
+	// Accessible at: http://localhost:8080/swagger-ui/index.html
+	implementation 'org.org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0'
+
+	// 4. Lombok to reduce boilerplate code (Getters, Setters, Constructors, etc.)
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	// 5. Spring Boot Starter Test (Includes JUnit 5, Mockito, Spring Test, AssertJ)
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
