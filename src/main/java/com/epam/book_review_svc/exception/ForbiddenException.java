@@ -1,6 +1,9 @@
 package com.epam.book_review_svc.exception;
 
-public class ForbiddenException extends ApiException {
+import org.springframework.http.HttpStatus;
+
+public class ForbiddenException extends BusinessException {
+    private static final int HTTP_STATUS = HttpStatus.FORBIDDEN.value();
 
     public ForbiddenException(String message) {
         super(message);
@@ -11,7 +14,7 @@ public class ForbiddenException extends ApiException {
     }
 
     @Override
-    public int getStatusCode() {
-        return 403;
+    public int getHttpStatusCode() {
+        return HTTP_STATUS;
     }
 }

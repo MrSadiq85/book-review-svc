@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440000",
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "ISBN": "978-0132350884",
+    "genre": "Software Engineering",
+    "publicationDate": "2008-08-11"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440001",
+    "title": "The Pragmatic Programmer",
+    "author": "Andrew Hunt, David Thomas",
+    "ISBN": "978-0201616224",
+    "genre": "Software Development",
+    "publicationDate": "1999-10-30"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440002",
+    "title": "Design Patterns",
+    "author": "Gang of Four",
+    "ISBN": "978-0201633610",
+    "genre": "Software Architecture",
+    "publicationDate": "1994-10-31"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440003",
+    "title": "Refactoring",
+    "author": "Martin Fowler",
+    "ISBN": "978-0201485677",
+    "genre": "Software Development",
+    "publicationDate": "1999-07-08"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440004",
+    "title": "The Book of Java",
+    "author": "Patrick Niemeyer, Jonathan Knudsen",
+    "ISBN": "978-0596002770",
+    "genre": "Java Programming",
+    "publicationDate": "2005-05-27"
+  }
+]

@@ -1,17 +1,17 @@
 package com.epam.book_review_svc.exception;
 
-public class DataAccessException extends ApiException {
+import org.springframework.http.HttpStatus;
 
-    public DataAccessException(String message) {
-        super(message);
-    }
+public class DataAccessException extends BusinessException {
+    private static final int HTTP_STATUS = HttpStatus.INTERNAL_SERVER_ERROR.value();
 
     public DataAccessException(String message, Throwable cause) {
         super(message, cause);
     }
 
     @Override
-    public int getStatusCode() {
-        return 500;
+    public int getHttpStatusCode() {
+        return HTTP_STATUS;
     }
 }
+
