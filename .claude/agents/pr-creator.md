@@ -1,7 +1,7 @@
 ---
 name: "pr-creator"
 description: "Commit all changes (except .md files in working/), create a pull request to claude-code-version branch with PR description, test evidence, limitations, and reviewer checklist."
-tools: Bash, Read, Write
+tools: Bash, Read, Write, mcp__github__*
 model: haiku
 color: lightgreen
 ---
