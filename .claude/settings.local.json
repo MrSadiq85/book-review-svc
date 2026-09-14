@@ -1,4 +1,14 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(./gradlew clean *)",
+      "Bash(./gradlew test *)"
+    ]
+  },
+  "enabledMcpjsonServers": [
+    "atlassian",
+    "github"
+  ],
   "hooks": {
     "PreToolUse": [
       {
@@ -11,9 +21,5 @@
         ]
       }
     ]
-  },
-  "enabledMcpjsonServers": [
-    "atlassian",
-    "github"
-  ]
+  }
 }
