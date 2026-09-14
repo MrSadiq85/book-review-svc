@@ -104,8 +104,6 @@ public class BookServiceCriticalIssuesTests {
                     LocalDate.of(2000, 1, 1)
             );
 
-            when(bookValidator.validateCreateBookRequest(request)).thenReturn(List.of());
-
             assertThatThrownBy(() -> bookService.createBook(request, null))
                     .isInstanceOf(ForbiddenException.class)
                     .hasMessageContaining("authenticated");
@@ -121,8 +119,6 @@ public class BookServiceCriticalIssuesTests {
                     "Fiction",
                     LocalDate.of(2000, 1, 1)
             );
-
-            when(bookValidator.validateCreateBookRequest(request)).thenReturn(List.of());
 
             assertThatThrownBy(() -> bookService.createBook(request, "   "))
                     .isInstanceOf(ForbiddenException.class);
