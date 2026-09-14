@@ -1,4 +1,17 @@
 {
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Read",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "This attempts to read '.env' which contains sensitive secrets. Block this read operation."
+          }
+        ]
+      }
+    ]
+  },
   "enabledMcpjsonServers": [
     "atlassian",
     "github"
