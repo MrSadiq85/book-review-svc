@@ -72,7 +72,7 @@ Proceed sequentially after each answer. Ask questions in this order:
 "Based on the requirements, should we implement the full feature in this phase, or is there a minimum viable implementation (MVP) we should prioritize?"
 
 **Question 2 - Testing Strategy:**
-"What level of test coverage do you expect? Should I include unit tests, integration tests, or both?"
+"(SKIPPED - Implementation only, no tests)"
 
 **Question 3 - API Documentation:**
 "Should I add or update Swagger/OpenAPI annotations on new endpoints? Any specific documentation patterns to follow?"
@@ -88,7 +88,6 @@ Proceed sequentially after each answer. Ask questions in this order:
    - Model/DTO classes with Lombok annotations
    - Service layer with business logic and JSON I/O
    - REST Controller with endpoints and Swagger annotations
-   - Test cases (unit and integration)
 2. Follow established code patterns from the existing codebase
 3. Use appropriate Java 25 and Spring Boot 4.1.1 features
 4. Ensure JSON file operations work correctly with ObjectMapper
@@ -97,11 +96,9 @@ Proceed sequentially after each answer. Ask questions in this order:
 
 **Phase 4: Validation & Testing**
 1. Run `./gradlew build` to verify compilation
-2. Run `./gradlew test` to execute all tests
-3. Start application with `./gradlew bootRun` for manual testing
-4. Verify endpoints in Swagger UI at `http://localhost:8080/swagger-ui/index.html`
-5. Test edge cases and error scenarios
-6. Report results and any issues found
+2. Start application with `./gradlew bootRun` for manual testing
+3. Verify endpoints in Swagger UI at `http://localhost:8080/swagger-ui/index.html`
+4. Test edge cases manually via Swagger UI
 
 **Phase 5: Code Review & Finalization**
 1. Review code against project conventions
@@ -118,11 +115,11 @@ Proceed sequentially after each answer. Ask questions in this order:
 - ✓ Follow existing code patterns and conventions
 - ✓ Use Lombok for boilerplate reduction
 - ✓ Add Swagger annotations to all new endpoints
-- ✓ Write integration tests alongside implementation
 - ✓ Handle JSON file I/O through service layer
 - ✓ Keep implementations minimal and focused
 
 **DON'T:**
+- ✗ Write test files or test cases (implementation only)
 - ✗ Create unnecessary abstractions or over-engineer
 - ✗ Modify architecture without explicit approval
 - ✗ Skip error handling or validation
@@ -148,7 +145,6 @@ Proceed sequentially after each answer. Ask questions in this order:
 
 1. **Code Changes:**
    - Modified/created Java files with complete implementation
-   - Test files (unit and integration tests)
    - Any new JSON data files in `src/main/resources/data/`
 
 2. **Implementation Summary:**
@@ -157,23 +153,12 @@ Proceed sequentially after each answer. Ask questions in this order:
    - Key design decisions made
    - Any deviations from the plan and why
 
-3. **Testing Report:**
-   - Test coverage summary
-   - All tests passing status
-   - Any edge cases or known limitations
-
-4. **Verification Checklist:**
+3. **Verification Checklist:**
    - ✓ Code compiles cleanly (`./gradlew build`)
-   - ✓ All tests pass (`./gradlew test`)
    - ✓ Application runs (`./gradlew bootRun`)
    - ✓ Endpoints visible in Swagger UI
    - ✓ Manual testing completed
    - ✓ Documentation updated
-
-5. **Git Commit:**
-   - Clear commit message describing changes
-   - Reference to requirements/architecture as needed
-   - Include Co-Authored-By: Claude Haiku 4.5 line per project guidelines
 
 **Output Format:**
 All code is delivered directly in the codebase via Edit/Write tools. A comprehensive summary is provided explaining what was built, how it works, and verification results.
