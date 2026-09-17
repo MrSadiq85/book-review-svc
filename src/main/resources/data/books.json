@@ -38,13 +38,5 @@
     "ISBN": "978-0596002770",
     "genre": "Java Programming",
     "publicationDate": "2005-05-27"
-  },
-  {
-    "id": "550e8400-e29b-41d4-a716-446655440001",
-    "title": "The Pragmatic Programmer",
-    "author": "Andrew Hunt, David Thomas",
-    "ISBN": "978-0201616224",
-    "genre": "Software Development",
-    "publicationDate": "1999-10-30"
   }
 ]
