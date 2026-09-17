@@ -7,7 +7,7 @@
     "genre": "Software Engineering",
     "publicationDate": "2008-08-11",
     "createdBy": "system",
-    "createdAt": "2026-09-17T10:00:00.000Z"
+    "createdAt": "2026-09-17T10:00:00.000+00:00"
   },
   {
     "id": "550e8400-e29b-41d4-a716-446655440001",
@@ -17,7 +17,7 @@
     "genre": "Software Development",
     "publicationDate": "1999-10-30",
     "createdBy": "system",
-    "createdAt": "2026-09-17T10:00:00.000Z"
+    "createdAt": "2026-09-17T10:00:00.000+00:00"
   },
   {
     "id": "550e8400-e29b-41d4-a716-446655440002",
@@ -27,7 +27,7 @@
     "genre": "Software Architecture",
     "publicationDate": "1994-10-31",
     "createdBy": "system",
-    "createdAt": "2026-09-17T10:00:00.000Z"
+    "createdAt": "2026-09-17T10:00:00.000+00:00"
   },
   {
     "id": "550e8400-e29b-41d4-a716-446655440003",
@@ -37,7 +37,7 @@
     "genre": "Software Development",
     "publicationDate": "1999-07-08",
     "createdBy": "system",
-    "createdAt": "2026-09-17T10:00:00.000Z"
+    "createdAt": "2026-09-17T10:00:00.000+00:00"
   },
   {
     "id": "550e8400-e29b-41d4-a716-446655440004",
@@ -47,6 +47,6 @@
     "genre": "Java Programming",
     "publicationDate": "2005-05-27",
     "createdBy": "system",
-    "createdAt": "2026-09-17T10:00:00.000Z"
+    "createdAt": "2026-09-17T10:00:00.000+00:00"
   }
 ]
