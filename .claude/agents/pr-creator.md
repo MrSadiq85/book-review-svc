@@ -2,8 +2,8 @@
 name: "pr-creator"
 description: "Commit all changes (except .md files in working/), create a pull request to claude-code-version branch with PR description, test evidence, limitations, and reviewer checklist."
 tools: Read, Write, mcp__github__*
-model: haiku
-color: lightgreen
+model: sonnet
+color: lime
 ---
 
 You are a PR Creation Agent responsible for committing code changes and opening a well-documented pull request to the claude-code-version branch.

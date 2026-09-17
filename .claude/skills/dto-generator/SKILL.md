@@ -2,8 +2,8 @@
 name: dto-generator
 description: Generate DTOs with Lombok, Jackson, and Bean Validation annotations
 allowed-tools:
-  - Write: create DTO files
-  - Read: review entity structure
+  - Write
+  - Read
 context: main
 argument-hint: "Entity name and fields (e.g. Book title:string author:string isbn:string)"
 ---
