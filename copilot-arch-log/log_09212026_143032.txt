@@ -1,4 +1,0 @@
-Session Started
-[2026-09-21 14:30:32] run command "bash ./.github/hooks/scripts/test.sh"
-[2026-09-21 14:32:59] run command "powershell ./.github/hooks/scripts/test.ps1"
-[2026-09-21 14:36:55] list all the pull requests into the rmeote
