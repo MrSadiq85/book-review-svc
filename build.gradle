@@ -21,20 +21,31 @@ dependencies {
 	// 1. Spring Boot Web starter for building REST APIs
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 
-	// 2. Jackson (Included transitively via web, but good to know)
-	// Used to read/write JSON database replica files from src/main/resources
+	// 2. Spring Boot Security starter (for Principal, SecurityContext, future auth integration)
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
+	// 3. Jackson for JSON processing
+	// - jackson-databind for JSON serialization/deserialization
+	// - jackson-datatype-jsr310 for Java 8+ date/time support (LocalDate, OffsetDateTime)
 	implementation 'com.fasterxml.jackson.core:jackson-databind'
+	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
 
-	// 3. SpringDoc OpenAPI UI for Swagger documentation (No authentication required)
+	// 4. SpringDoc OpenAPI UI for Swagger documentation
 	// Accessible at: http://localhost:8080/swagger-ui/index.html
-	implementation 'org.org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0'
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:3.1.1'
 
-	// 4. Lombok to reduce boilerplate code (Getters, Setters, Constructors, etc.)
+	// 5. Lombok to reduce boilerplate code (Getters, Setters, Constructors, etc.)
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 
-	// 5. Spring Boot Starter Test (Includes JUnit 5, Mockito, Spring Test, AssertJ)
+	// 6. Hibernate Validator for Bean Validation (JSR-380)
+	implementation 'org.hibernate.validator:hibernate-validator'
+
+	// 8. Spring Boot Starter Test (Includes JUnit 5, Mockito, Spring Test, AssertJ)
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// 9. Spring Security Test for testing secured endpoints
+	testImplementation 'org.springframework.security:spring-security-test'
 }
 
 tasks.named('test') {

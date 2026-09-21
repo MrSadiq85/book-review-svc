@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "hooks": {
+    "userPromptSubmitted": [
+      {
+        "type": "command",
+        "powershell": "powershell -ExecutionPolicy Bypass -File ./.github/hooks/scripts/user-prompt.ps1",
+        "cwd": ".",
+        "timeoutSec": 10
+      }
+    ],
+    "preToolUse": [
+      {
+        "type": "command",
+        "powershell": "powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -File .\\.github\\hooks\\scripts\\pre-tool-use.ps1",
+        "cwd": ".",
+        "timeoutSec": 10
+      }
+    ],
+    "errorOccurred": [
+      {
+        "type": "command",
+        "powershell": "powershell -ExecutionPolicy Bypass -File ./.github/hooks/scripts/error-occurred.ps1",
+        "cwd": ".",
+        "timeoutSec": 10
+      }
+    ],
+    "sessionEnd": [
+      {
+        "type": "command",
+        "powershell": "powershell -ExecutionPolicy Bypass -File ./.github/hooks/scripts/session-end.ps1",
+        "cwd": ".",
+        "timeoutSec": 10
+      }
+    ]
+  }
+}
