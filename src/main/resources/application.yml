@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: book-review-svc
+  jackson:
+    default-property-inclusion: non_null
+
+book:
+  storage:
+    path: ${BOOK_STORAGE_PATH:./data/books.json}
