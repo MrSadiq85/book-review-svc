@@ -110,7 +110,7 @@ Before starting the SDLC workflow, ensure the following MCP servers are configur
 **Agent Used:** `code-reviewer`
 
 **Inputs:**
-- Current branch code changes vs. `claude-code-version` branch
+- Current branch code changes vs. `copilot-version` branch
 - Uncommitted code in working stage
 
 **Outputs:**
