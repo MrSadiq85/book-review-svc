@@ -171,7 +171,7 @@ Before starting the SDLC workflow, ensure the following MCP servers are configur
 
 **Actions:**
 - Commits all changes (except working directory .md files)
-- Creates PR to `claude-code-version` branch with:
+- Creates PR to `copilot-version` branch with:
     - Summary of changes
     - Test plan and evidence
     - Known limitations
