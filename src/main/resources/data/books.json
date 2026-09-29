@@ -5,7 +5,9 @@
     "author": "Robert C. Martin",
     "ISBN": "978-0132350884",
     "genre": "Software Engineering",
-    "publicationDate": "2008-08-11"
+    "publicationDate": "2008-08-11",
+    "createdBy": "system",
+    "createdAt": "2026-09-17T10:00:00.000+00:00"
   },
   {
     "id": "550e8400-e29b-41d4-a716-446655440001",
@@ -13,7 +15,9 @@
     "author": "Andrew Hunt, David Thomas",
     "ISBN": "978-0201616224",
     "genre": "Software Development",
-    "publicationDate": "1999-10-30"
+    "publicationDate": "1999-10-30",
+    "createdBy": "system",
+    "createdAt": "2026-09-17T10:00:00.000+00:00"
   },
   {
     "id": "550e8400-e29b-41d4-a716-446655440002",
@@ -21,7 +25,9 @@
     "author": "Gang of Four",
     "ISBN": "978-0201633610",
     "genre": "Software Architecture",
-    "publicationDate": "1994-10-31"
+    "publicationDate": "1994-10-31",
+    "createdBy": "system",
+    "createdAt": "2026-09-17T10:00:00.000+00:00"
   },
   {
     "id": "550e8400-e29b-41d4-a716-446655440003",
@@ -29,7 +35,9 @@
     "author": "Martin Fowler",
     "ISBN": "978-0201485677",
     "genre": "Software Development",
-    "publicationDate": "1999-07-08"
+    "publicationDate": "1999-07-08",
+    "createdBy": "system",
+    "createdAt": "2026-09-17T10:00:00.000+00:00"
   },
   {
     "id": "550e8400-e29b-41d4-a716-446655440004",
@@ -37,14 +45,8 @@
     "author": "Patrick Niemeyer, Jonathan Knudsen",
     "ISBN": "978-0596002770",
     "genre": "Java Programming",
-    "publicationDate": "2005-05-27"
-  },
-  {
-    "id": "550e8400-e29b-41d4-a716-446655440001",
-    "title": "The Pragmatic Programmer",
-    "author": "Andrew Hunt, David Thomas",
-    "ISBN": "978-0201616224",
-    "genre": "Software Development",
-    "publicationDate": "1999-10-30"
+    "publicationDate": "2005-05-27",
+    "createdBy": "system",
+    "createdAt": "2026-09-17T10:00:00.000+00:00"
   }
 ]
