@@ -3,6 +3,8 @@ package com.epam.book_review_svc.service;
 import com.epam.book_review_svc.exception.BookNotFoundException;
 import com.epam.book_review_svc.exception.DuplicateIsbnException;
 import com.epam.book_review_svc.exception.InvalidBookException;
+import com.epam.book_review_svc.exception.InvalidPaginationException;
+import com.epam.book_review_svc.exception.InvalidSortException;
 import com.epam.book_review_svc.model.Book;
 import com.epam.book_review_svc.model.dto.BookRequestDto;
 import com.epam.book_review_svc.repository.JsonFileBookRepository;
@@ -10,6 +12,7 @@ import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validator;
 import org.springframework.stereotype.Service;
 
+import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
@@ -34,6 +37,54 @@ public class BookService {
             .orElseThrow(() -> new BookNotFoundException("Book not found: " + id));
     }
 
+    public List<Book> getRecentBooks(int limit, String sortBy, String order) {
+        validatePaginationParams(limit, sortBy, order);
+
+        List<Book> allBooks = repository.findAll();
+
+        List<Book> sortedBooks = allBooks.stream()
+            .sorted((b1, b2) -> {
+                int comparison = compareBySortField(b1, b2, sortBy);
+                return "DESC".equalsIgnoreCase(order) ? -comparison : comparison;
+            })
+            .limit(limit)
+            .toList();
+
+        return sortedBooks;
+    }
+
+    private int compareBySortField(Book b1, Book b2, String sortBy) {
+        return switch (sortBy.toLowerCase()) {
+            case "createdat" -> compareOffsetDateTime(b1.getCreatedAt(), b2.getCreatedAt());
+            case "updatedat" -> compareOffsetDateTime(b1.getUpdatedAt(), b2.getUpdatedAt());
+            case "title" -> b1.getTitle().compareTo(b2.getTitle());
+            case "author" -> b1.getAuthor().compareTo(b2.getAuthor());
+            default -> 0;
+        };
+    }
+
+    private int compareOffsetDateTime(OffsetDateTime dt1, OffsetDateTime dt2) {
+        if (dt1 == null && dt2 == null) return 0;
+        if (dt1 == null) return -1;
+        if (dt2 == null) return 1;
+        return dt1.compareTo(dt2);
+    }
+
+    private void validatePaginationParams(int limit, String sortBy, String order) {
+        if (limit < 1 || limit > 100) {
+            throw new InvalidPaginationException("limit must be between 1 and 100");
+        }
+
+        String validSortFields = "createdAt,updatedAt,title,author";
+        if (!validSortFields.toLowerCase().contains(sortBy.toLowerCase())) {
+            throw new InvalidSortException("sortBy must be one of: createdAt, updatedAt, title, author");
+        }
+
+        if (!"ASC".equalsIgnoreCase(order) && !"DESC".equalsIgnoreCase(order)) {
+            throw new InvalidSortException("order must be ASC or DESC");
+        }
+    }
+
     public Book createBook(BookRequestDto request) {
         validateBookRequest(request);
 
@@ -45,11 +96,14 @@ public class BookService {
             throw new DuplicateIsbnException("isbn already exists for another book");
         }
 
+        OffsetDateTime now = OffsetDateTime.now();
         Book newBook = Book.builder()
             .id(UUID.randomUUID().toString())
             .isbn(normalizedIsbn)
             .title(request.getTitle().trim())
             .author(request.getAuthor().trim())
+            .createdAt(now)
+            .updatedAt(now)
             .build();
 
         return repository.create(newBook);
@@ -75,7 +129,7 @@ public class BookService {
             throw new InvalidBookException("The book representation is invalid.");
         }
 
-        repository.findById(trimmedId)
+        Book existingBook = repository.findById(trimmedId)
             .orElseThrow(() -> new BookNotFoundException("Book not found: " + trimmedId));
 
         boolean duplicateIsbn = repository.findAll().stream()
@@ -91,6 +145,8 @@ public class BookService {
             .isbn(normalizedIsbn)
             .title(normalizedTitle)
             .author(normalizedAuthor)
+            .createdAt(existingBook.getCreatedAt())
+            .updatedAt(OffsetDateTime.now())
             .build();
 
         return repository.replace(trimmedId, updatedBook);
@@ -153,3 +209,4 @@ public class BookService {
         return false;
     }
 }
+
