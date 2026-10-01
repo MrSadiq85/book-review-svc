@@ -5,6 +5,7 @@ import com.epam.book_review_svc.model.Book;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
@@ -30,6 +31,7 @@ public class JsonFileBookRepository implements BookRepository {
     public JsonFileBookRepository(@Value("${book.storage.path:./data/books.json}") String storePath) {
         this.storePath = Paths.get(storePath);
         this.objectMapper = new ObjectMapper();
+        this.objectMapper.registerModule(new JavaTimeModule());
         this.objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
         initializeStore();
     }
