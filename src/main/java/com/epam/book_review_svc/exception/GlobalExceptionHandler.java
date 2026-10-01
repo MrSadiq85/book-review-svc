@@ -32,6 +32,16 @@ public class GlobalExceptionHandler {
         return buildError(HttpStatus.BAD_REQUEST, "VALIDATION_ERROR", ex.getMessage(), request.getRequestURI(), null);
     }
 
+    @ExceptionHandler(InvalidPaginationException.class)
+    public ResponseEntity<ApiError> handleInvalidPagination(InvalidPaginationException ex, HttpServletRequest request) {
+        return buildError(HttpStatus.BAD_REQUEST, "INVALID_PAGINATION", ex.getMessage(), request.getRequestURI(), null);
+    }
+
+    @ExceptionHandler(InvalidSortException.class)
+    public ResponseEntity<ApiError> handleInvalidSort(InvalidSortException ex, HttpServletRequest request) {
+        return buildError(HttpStatus.BAD_REQUEST, "INVALID_SORT", ex.getMessage(), request.getRequestURI(), null);
+    }
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ApiError> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpServletRequest request) {
         List<String> details = ex.getBindingResult().getFieldErrors().stream()

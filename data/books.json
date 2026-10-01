@@ -1,1 +1,8 @@
-[]
+[ {
+  "id" : "5d85848f-dedb-4bfa-add9-d8585e8c78e5",
+  "isbn" : "1234567891234",
+  "title" : "Test",
+  "author" : "Tester",
+  "createdAt" : 1790774004.373848200,
+  "updatedAt" : 1790774004.373848200
+} ]
