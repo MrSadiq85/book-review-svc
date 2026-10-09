@@ -1,8 +1,6 @@
-package com.epam.book_review_svc.model;
+package com.epam.book_review_svc.model.dto;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.ser.OffsetDateTimeSerializer;
 import lombok.AllArgsConstructor;
@@ -16,8 +14,7 @@ import java.time.OffsetDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class Book {
+public class BookDetailedResponseDto {
 
     @JsonProperty("id")
     private String id;

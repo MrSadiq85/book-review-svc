@@ -96,8 +96,12 @@ class BookControllerTest {
 
     @Test
     void postBookRejectsDuplicateIsbn() throws Exception {
-        repository.create(new com.epam.book_review_svc.model.Book(
-            "book-123", "9780134685991", "Effective Java", "Joshua Bloch"));
+        repository.create(com.epam.book_review_svc.model.Book.builder()
+            .id("book-123")
+            .isbn("9780134685991")
+            .title("Effective Java")
+            .author("Joshua Bloch")
+            .build());
 
         BookRequestDto request = BookRequestDto.builder()
             .isbn("978-0134685991")
@@ -114,7 +118,12 @@ class BookControllerTest {
 
     @Test
     void putAndDeleteBookUsesExpectedEndpoints() throws Exception {
-        repository.replace("book-123", new com.epam.book_review_svc.model.Book("book-123", "9780134685991", "Old Book", "Old Author"));
+        repository.replace("book-123", com.epam.book_review_svc.model.Book.builder()
+            .id("book-123")
+            .isbn("9780134685991")
+            .title("Old Book")
+            .author("Old Author")
+            .build());
 
         BookRequestDto request = BookRequestDto.builder()
             .isbn("9780134685991")

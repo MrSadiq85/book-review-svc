@@ -1,1 +1,36 @@
-[]
+[ {
+  "id" : "5d85848f-dedb-4bfa-add9-d8585e8c78e5",
+  "isbn" : "1234567891234",
+  "title" : "Test",
+  "author" : "Tester",
+  "createdAt" : 1790774004.373848200,
+  "updatedAt" : 1790774004.373848200
+}, {
+  "id" : "c8dd2bc7-6f0e-4c17-9fb4-3e92d0b6d362",
+  "isbn" : "1234578912",
+  "title" : "MeToYou",
+  "author" : "sid",
+  "createdAt" : 1791264284.435868200,
+  "updatedAt" : 1791264284.435868200
+}, {
+  "id" : "21eaf188-9a90-4b6a-a456-4fac2c9abdeb",
+  "isbn" : "1234578934",
+  "title" : "MeToYou1",
+  "author" : "sid",
+  "createdAt" : 1791264605.191444900,
+  "updatedAt" : 1791264605.191444900
+}, {
+  "id" : "5daddbbb-2836-4f8e-bacb-5f42d9bc7f06",
+  "isbn" : "1234578234",
+  "title" : "TestBook",
+  "author" : "sid",
+  "createdAt" : 1791264619.094719900,
+  "updatedAt" : 1791264619.094719900
+}, {
+  "id" : "bd81dd5b-3408-4248-8c59-c0ac9814bd37",
+  "isbn" : "1234578274",
+  "title" : "TestBook2",
+  "author" : "sid",
+  "createdAt" : 1791264641.175546800,
+  "updatedAt" : 1791264641.175546800
+} ]
